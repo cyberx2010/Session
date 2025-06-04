@@ -10,7 +10,7 @@ const {
     makeCacheableSignalKeyStore,
     Browsers,
     jidNormalizedUser
-} = require("manul-ofc-baileys-new");
+} = require("whiskeysockets/baileys");
 const { upload } = require('./mega');
 
 function removeFile(FilePath) {
@@ -67,14 +67,14 @@ router.get('/', async (req, res) => {
 
                         const string_session = mega_url.replace('https://mega.nz/file/', '');
 
-                        const sid = "CHANUKA-MD~" + string_session;
+                        const sid = "𝙷𝙸𝚁𝙰𝙽-𝙼𝙳=" + string_session;
 
                         const dt = await PrabathPairWeb.sendMessage(user_jid, {
                             text: sid
                         });
 
                                    await PrabathPairWeb.sendMessage(user_jid, {
-                            text: `*𝐂𝐇𝐀𝐍𝐔𝐊𝐀-𝐌𝐃  𝐒𝐄𝐒𝐒𝐈𝐎𝐍 𝐒𝐔𝐂𝐂𝐄𝐒𝐅𝐔𝐋𝐋👇*\n\n* *𝙷𝙸  👋.....*\n\n*⭕ Github Repo :*\n\n> https://github.com/Chanuka345/CHANUKA-MD-NEW\n\n*⭕ WHATSAPP CHANNEL :*\n\n> https://whatsapp.com/channel/0029Vb5Wqjy4Crfc5I7ML60l\n\n*⭕Contact Owner :*\n\n> wa.me/94741469245\n\n\n🚫 *𝗗𝗢𝗡𝗧 𝗦𝗛𝗔𝗥𝗘 𝗬𝗢𝗨𝗥 𝗦𝗘𝗦𝗦𝗜𝗢𝗡 𝗜𝗗* 🚫`
+                            text: `*𝐇𝐈𝐑𝐀𝐍-𝐌𝐃  𝐒𝐄𝐒𝐒𝐈𝐎𝐍 𝐒𝐔𝐂𝐂𝐄𝐒𝐅𝐔𝐋𝐋👇*\n\n* *𝙷𝙸  👋.....*\n\n*⭕ Github Repo :*\n\n> https://github.com/cyberx2010\n\n*⭕ WHATSAPP CHANNEL :*\n\n> https://whatsapp.com/channel/0029VbAqseT30LKNCO71mQ3d\n\n*⭕Contact Developer:*\n\n> wa.me/94756407634\n\n\n🚫 *𝗗𝗢𝗡𝗧 𝗦𝗛𝗔𝗥𝗘 𝗬𝗢𝗨𝗥 𝗦𝗘𝗦𝗦𝗜𝗢𝗡 𝗜𝗗 𝗧𝗢 𝗔𝗡𝗬𝗢𝗡𝗘* 🚫`
                         });
 
                     } catch (e) {
