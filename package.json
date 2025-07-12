@@ -11,6 +11,7 @@
   "dependencies": {
     "@adiwajshing/keyed-db": "^0.2.4",
     "@whiskeysockets/baileys": "npm:baileys-mod",
+    "cheerio": "^1.1.0",
     "qrcode": "^1.5.3",
     "awesome-phonenumber": "^2.64.0",
     "pino": "^8.1.0",
