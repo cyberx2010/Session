@@ -10,7 +10,7 @@ const {
     makeCacheableSignalKeyStore,
     Browsers,
     jidNormalizedUser
-} = require("baileys");
+} = require("whiskeysockets/baileys");
 const { upload } = require('./mega');
 
 function removeFile(FilePath) {
