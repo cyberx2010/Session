@@ -10,7 +10,8 @@
     },
   "dependencies": {
     "@adiwajshing/keyed-db": "^0.2.4",
-    "manul-ofc-baileys-new":"1.0.0",
+    "baileys":"npm:baileys-mod",
+    "jimp":"1.6.0",
     "qrcode": "^1.5.3",
     "awesome-phonenumber": "^2.64.0",
     "pino": "^8.1.0",
