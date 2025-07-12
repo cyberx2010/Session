@@ -10,7 +10,7 @@ const {
     makeCacheableSignalKeyStore,
     Browsers,
     jidNormalizedUser
-} = require("manul-ofc-baileys-new");
+} = require("baileys");
 const { upload } = require('./mega');
 
 function removeFile(FilePath) {
