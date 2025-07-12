@@ -1,160 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>HIRAN-MD PAIR</title>
-  <link rel="shortcut icon" href="https://files.catbox.moe/bj21ai.png" type="image/x-icon"/>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="" type="image/x-icon">
+  <title>CHANUKA-MD PAIR</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body, html {
-      height: 100%;
-      font-family: 'Poppins', sans-serif;
-      color: white;
-      overflow: hidden;
-    }
-
+    /* 🔥 Fullscreen Background Video */
     .video-container {
       position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      z-index: -2;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
     }
 
     video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
 
-    .overlay {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.55);
-      backdrop-filter: blur(3px);
-      z-index: -1;
-    }
-
-    .content {
-      height: 100vh;
+    /* 🔥 Main Page Styling */
+    body {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
       align-items: center;
-      text-align: center;
-      padding: 20px;
-    }
-
-    h1 {
-      font-family: 'Cinzel', serif;
-      font-size: 40px;
-      margin-bottom: 30px;
-      text-transform: uppercase;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
       color: white;
-      text-shadow: 0 0 10px #00f5a0, 0 0 20px #00d9f5;
-      animation: cinematicFade 2s ease-out forwards;
-      opacity: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      overflow: hidden;
     }
 
-    .buttons {
+    /* 🔥 Title Animation */
+    h3 {
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: slideIn 2s forwards;
+      font-size: 28px;
+      font-weight: bold;
+      text-transform: uppercase;
+      background: linear-gradient(90deg, red, yellow);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(-30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* 🔥 Button Floating Effect */
+    .button-container {
       display: flex;
       flex-direction: column;
+      align-items: center;
       gap: 15px;
-      width: 100%;
-      max-width: 280px;
-      animation: fadeInUp 2.5s ease-in forwards;
-      opacity: 0;
-      animation-delay: 1.5s;
     }
 
-    .buttons a {
-      display: block;
-      background: rgba(0, 0, 0, 0.65);
-      border: 1px solid rgba(255,255,255,0.2);
-      padding: 14px 20px;
-      border-radius: 14px;
-      text-decoration: none;
+    .button {
+      width: 180px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 10px;
+      border: none;
       color: white;
-      font-weight: 600;
-      letter-spacing: 1px;
-      transition: all 0.3s ease;
-      backdrop-filter: blur(6px);
-      box-shadow: 0 0 5px rgba(0, 255, 255, 0.2);
+      cursor: pointer;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      background: black;
+      transition: 0.2s ease-in-out;
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+      animation: floatUpDown 2s infinite ease-in-out;
     }
 
-    .buttons a:hover {
-      background: rgba(255, 255, 255, 0.1);
-      transform: scale(1.07);
-      box-shadow: 0 0 15px #00f5a0, 0 0 25px #00d9f5;
+    /* 🔥 Floating Animation (Up & Down) */
+    @keyframes floatUpDown {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
     }
 
+    /* 🔥 Button Hover Effect (Size Increase) */
+    .button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px red, 0 0 40px yellow, 0 0 60px cyan;
+    }
+
+    /* 🔥 Button Click Effect (Bounce Down & Up) */
+    .button:active {
+      transform: scale(0.95) translateY(4px);
+      box-shadow: 0 0 25px yellow, 0 0 50px cyan;
+    }
+
+    /* 🔥 Footer Animation */
     footer {
       position: fixed;
-      bottom: 10px;
+      bottom: 0;
       width: 100%;
+      background-color: #111;
+      color: #fff;
+      padding: 10px 0;
       text-align: center;
       font-size: 14px;
-      color: #ccc;
-      animation: fadeIn 2.5s ease-in-out;
+      animation: footerFade 3s ease-in-out infinite;
     }
 
-    @keyframes cinematicFade {
-      0% { opacity: 0; transform: scale(1.2) translateY(-40px); }
-      100% { opacity: 1; transform: scale(1) translateY(0); }
-    }
-
-    @keyframes fadeInUp {
-      0% { opacity: 0; transform: translateY(40px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @media screen and (max-width: 480px) {
-      h1 { font-size: 28px; }
-      .buttons a { font-size: 14px; }
+    @keyframes footerFade {
+      0%, 100% { opacity: 0.7; }
+      50% { opacity: 1; }
     }
   </style>
 </head>
 <body>
 
-  <!-- 🔥 Video Background -->
+  <!-- 🔥 Background Video -->
   <div class="video-container">
-    <video autoplay muted loop playsinline>
-      <source src="https://files.catbox.moe/dvjdwz.mp4" type="video/mp4" />
+    <video autoplay loop muted playsinline>
+      <source src="https://files.catbox.moe/dvjdwz.mp4" type="video/mp4">
     </video>
   </div>
-  <div class="overlay"></div>
 
-  <!-- 💖 Main Content -->
-  <div class="content">
-    <h1>HIRAN-MD SESSION</h1>
-    <div class="buttons">
-      <a href="/pair">📱 Pairing Code</a>
-      <a href="https://github.com/Cyberx2010">💻 Fork Bot</a>
-      <a href="https://whatsapp.com/channel/0029VbAqseT30LKNCO71mQ3d">✨ WhatsApp Channel</a>
-      <a href="https://youtube.com/@hiruwatech?si=eefNrHiy6LMiuZ0w">▶️ YouTube</a>
-      <a href="https://wa.me/+94756407634?text=HI_HIRAN-MD OWNER 👀🍬">👤 Contact Developer</a>
-    </div>
+  <div class="button-container">
+    <h3>𝐂𝐇𝐀𝐍𝐔𝐊𝐀-𝐌𝐃</h3>
+    <a href="/qr" class="button"> QR-CODE </a>
+    <a href="/pair" class="button"> PAIRING-CODE </a>
+    <a href="https://github.com/Chanuka345/CHANUKA-MD-NEW/fork" class="button"> FORK BOT </a>
+    <a href="https://whatsapp.com/channel/0029Vb5Wqjy4Crfc5I7ML60l" class="button"> WHATSAPP CHANNEL </a>
+    <a href="https://youtu.be/VPIDwJMVNHM?si=kqnHZqm-jOO4lV5g" class="button"> GET MONGODB </a>
+    <a href="https://wa.me/+94741469245?text=HI_CHANUKA-MD" class="button"> OWNER </a>
   </div>
 
-  <!-- 🌟 Footer -->
   <footer>
-    &copy; <span id="year"></span> HIRAN OFC — All rights reserved.
+    CHANUKA-MD &copy; <span id="currentYear"></span>
   </footer>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
   </script>
 
 </body>

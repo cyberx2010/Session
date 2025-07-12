@@ -1,153 +1,178 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HIRAN-MD | QR Scanner</title>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1737874207490861"
+            crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>𝐂𝐇𝐀𝐍𝐔𝐊𝐀-𝐌𝐃 QR SCANER</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&amp;display=swap" rel="stylesheet">
+    <title>QR</title>
+    <style>
+        .bg {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-size: 400% 400%;
+            animation: AnimateBG 25s ease infinite;
+        }
 
-    body {
-      font-family: 'Outfit', sans-serif;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(-45deg, #4a90e2, #3ac569, #9b59b6, #e74c3c);
-      background-size: 400% 400%;
-      animation: gradient 15s ease infinite;
-    }
+        @keyframes AnimateBG {
+            0% {
+                background-position: 0% 50%
+            }
 
-    @keyframes gradient {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
+            50% {
+                background-position: 100% 50%
+            }
 
-    .container {
-      background: #000;
-      border-radius: 16px;
-      padding: 2rem;
-      max-width: 360px;
-      width: 90%;
-      text-align: center;
-      box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
-    }
+            100% {
+                background-position: 0% 50%
+            }
+        }
 
-    .logo {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 1rem;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-    }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Outfit";
+            background: linear-gradient(-45deg, #4a90e2, #3ac569, #9b59b6, #e74c3c);
+            background-size: 400% 400%;
+            animation: gradient 10s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-    .container img.qr {
-      width: 100%;
-      max-width: 320px;
-      border-radius: 10px;
-      margin-bottom: 1rem;
-    }
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
 
-    h2 {
-      color: #ffffff;
-      font-size: 1.5rem;
-      margin-bottom: 0.3rem;
-    }
+            50% {
+                background-position: 100% 50%;
+            }
 
-    p.legend {
-      color: #cccccc;
-      font-size: 0.95rem;
-      margin-bottom: 1rem;
-    }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
 
-    progress {
-      width: 100%;
-      height: 12px;
-      border-radius: 10px;
-      overflow: hidden;
-      margin-bottom: 1rem;
-      background: #1e1e1e;
-    }
+        jsl.code {
+            overflow: hidden;
+            background: linear-gradient(-45deg, #f1c40f, #3498db, #2ecc71, #e74c3c);
+            background-size: 400% 400%;
+            animation: gradient 8s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: 'Montserrat', sans-serif;
+            height: 110vh;
+            margin: 0px;
 
-    progress::-webkit-progress-bar {
-      background: #1e1e1e;
-    }
+        }
 
-    progress::-webkit-progress-value {
-      background: #3498db;
-    }
+        p.legend {
+            color: #fff;
+            font-size: 1em;
+            font-weight: 400;
+            padding: 0em 1.1em;
+            margin-top: 0.1em;
+        }
 
-    .reload-button {
-      padding: 10px 20px;
-      background-color: #3498db;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: 600;
-      transition: background-color 0.3s ease;
-      display: inline-block;
-      margin-top: 0.5rem;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
 
-    .reload-button:hover {
-      background-color: #2c80b4;
-    }
+        :root {
+            --main-color: hsl(212, 45%, 89%);
+            --principalText-color: hsl(218, 44%, 22%);
+            --secondText-color: hsl(220, 15%, 55%);
+        }
 
-    .hidden {
-      display: none;
-    }
-  </style>
+        #content {
+            display: flex;
+            flex-direction: column;
+            width: 22rem;
+            text-align: center;
+            background-color: #000000;
+            padding: 1rem;
+            border-radius: 14px;
+        }
 
-  <script>
-    let timeLeft = 30;
-    const timer = setInterval(() => {
-      const progress = document.getElementById('progressBar');
-      const statusText = document.getElementById('status-text');
-      const mainText = document.getElementById('main');
-      const qrImage = document.getElementById('qr-image');
-      const reloadButton = document.getElementById('reload');
+        #QR-content img {
+            border-radius: 10px;
+            width: 20rem;
+        }
 
-      if (timeLeft <= 0) {
-        clearInterval(timer);
-        progress.remove();
-        qrImage.classList.add('hidden');
-        mainText.textContent = "QR Expired!";
-        statusText.textContent = "Reloading in 5 seconds...";
-        setTimeout(() => {
-          location.reload();
-        }, 5000);
-        return;
-      }
+        #title-container {
+            padding: 1rem 1rem 0 1rem;
+            color: #fff;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
 
-      progress.value = 30 - timeLeft;
-      timeLeft--;
-    }, 1000);
-  </script>
+        #description-container {
+            padding: 0 2.5rem 0 2.5rem;
+            color: #fff;
+            margin-bottom: 2rem;
+        }
+
+        #p-legend {
+            font-size: 1em;
+            font-weight: 400;
+            padding: 0em 1.1em;
+            margin-top: 0.1em;
+        }
+
+        .reload-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498db; /* Blue color */
+            color: #fff; /* White text color */
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .reload-button:hover {
+            background-color: #2980b9; /* Darker blue color on hover */
+        }
+    </style>
+    <script>
+        var timeleft = 30;
+        var downloadTimer = setInterval(function () {
+            if (timeleft <= 0) {
+                clearInterval(downloadTimer);
+                document.getElementById("progressBar").remove();
+                document.getElementById("main").innerHTML = "QR Expired! Please reload";
+                document.getElementById("legend").innerHTML = ""
+            }
+            document.getElementById("progressBar").value = 30 - timeleft;
+            timeleft -= 1;
+        }, 1000);
+    </script>
 </head>
 <body>
-  <div class="container">
-    <!-- ✅ Logo / Branding -->
-    <img src="https://files.catbox.moe/bj21ai.png" alt="Logo" class="logo" />
-
-    <!-- ✅ QR Code -->
-    <img id="qr-image" class="qr" src="/server" alt="QR CODE" />
-
-    <!-- ✅ Title & Text -->
-    <h2 id="main">HIRAN-MD QR</h2>
-    <p class="legend" id="status-text">Scan the QR Code using your WhatsApp</p>
-
-    <!-- ✅ Progress Bar -->
-    <progress id="progressBar" value="0" max="30"></progress>
-
-    <!-- ✅ Manual Reload Button (optional) -->
-    <a href="javascript:location.reload()" class="reload-button" id="reload">Reload Page</a>
-  </div>
+<div class="bg">
+    <div id="content">
+        <div id="QR-content">
+            <img id="qr-image" src="/server" alt="QR CODE">
+        </div>
+        <div id="title-container">
+            <h2 id="main">CHANUKA-𝐌𝐃 QR</h2>
+            <p class="legend" id="legend">Scan The QR Code</p>
+        </div>
+        <div id="description-container">
+            <p id="semi" class="legend"></p>
+            <progress value="0" max="30" id="progressBar"></progress>
+        </div>
+        <a href="javascript:history.go(0)" class="reload-button">Reload Page</a>
+    </div>
+</div>
 </body>
 </html>
