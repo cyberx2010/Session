@@ -11,7 +11,7 @@ const {
     makeCacheableSignalKeyStore,
     Browsers,
     jidNormalizedUser
-} = require("manul-ofc-baileys-new");
+} = require("@whiskeysockets/baileys");
 const { upload } = require('./mega');
 function removeFile(FilePath) {
     if (!fs.existsSync(FilePath)) return false;
